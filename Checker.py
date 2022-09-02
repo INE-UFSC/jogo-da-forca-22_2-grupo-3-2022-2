@@ -48,36 +48,6 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
 
         print("Letras Disponíveis: " + retString)
 
+
 if __name__ == "__main__":
-    checker = Checker("amigo")
-    checker.check("a")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("m")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("i")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("g")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("g")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("u")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("í")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("g")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-    checker.check("o")
-    print(checker.getSuccessfullWord())
-    checker.printLetters()
-
-
-
-    
+    ...

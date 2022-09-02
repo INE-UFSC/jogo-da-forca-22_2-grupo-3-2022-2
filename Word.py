@@ -15,6 +15,6 @@ class Word():
         if r.status_code == 200: return obj['word']
         else : return ""
 
+
 if __name__ == '__main__':
-    w = Word()
-    print(w.get_random_word())
+    ...

@@ -44,7 +44,7 @@ class Game():
     def atualizar_interface(self):
         print("\nRodada atual: {}".format(self.rodada_atual))
         print(self.desenho_estagios[self.erros])
-        print(f"Número de erros permitidos: {self.limite_erros - self.erros - 1}")
+        print(f"Número de erros permitidos: {self.limite_erros - self.erros}")
         print(self.palavra.getSuccessfullWord())
         self.palavra.printLetters()
 

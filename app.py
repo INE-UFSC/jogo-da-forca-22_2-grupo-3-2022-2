@@ -1,4 +1,3 @@
-from curses.ascii import isdigit
 from Game import Game
 from Word import Word
 
