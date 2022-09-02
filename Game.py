@@ -7,7 +7,7 @@ class Game():
     def __init__(self, palavra, estagios_desenho):
         self.palavra = Checker(palavra)
 
-        self.tentativas = 0
+        self.rodada_atual = 0
         self.erros = 0
         self.limite_erros = len(estagios_desenho) - 1
         self.desenho_estagios = estagios_desenho  # É possível utlizar diferentes desenhos de console no jogo. Para isso deve-se alterar o import
@@ -26,7 +26,7 @@ class Game():
                     break
     
     def atualizar_interface(self):
-        print("\nRodada atual: {}".format(self.tentativas))
+        print("\nRodada atual: {}".format(self.rodada_atual))
         print(self.desenho_estagios[self.erros])
         print(f"Número de erros permitidos: {self.limite_erros - self.erros - 1}")
         print(self.palavra.getSuccessfullWord())
@@ -46,10 +46,13 @@ class Game():
         if self.palavra.check(letra_escolhida) == False:
             self.erros += 1
 
-        self.tentativas += 1
+        self.rodada_atual += 1
 
     def fim_de_jogo(self):
         return self.jogo_ganho() or self.erros == self.limite_erros
+
+    def reinicar_jogo(self, palavra):
+        self.__init__(palavra)
 
     def jogo_ganho(self):
         if '_' not in self.palavra.getSuccessfullWord():
