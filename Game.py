@@ -1,4 +1,3 @@
-import string
 from Checker import Checker
 from desenhos import estagios_desenho_forca as lista_desenho
 
