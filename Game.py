@@ -4,7 +4,7 @@ from desenhos import estagios_desenho_forca as lista_desenho
 
 class Game():
     def __init__(self, palavra, estagios_desenho):
-        self.palavra = [*palavra.upper()]
+        self.palavra = Checker(palavra)
         
         self.erros = 0
         self.limite_erros = len(estagios_desenho) 
@@ -17,8 +17,8 @@ class Game():
     
     def atualizar_interface(self):
         print(self.desenho_estagios[self.erros])
+        self.palavra.printLetters()
 
 
 jogo1 = Game("ELEFANTE", lista_desenho)
 jogo1.atualizar_interface()
-    
