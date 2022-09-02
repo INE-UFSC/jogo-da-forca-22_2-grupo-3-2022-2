@@ -32,11 +32,11 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
         cleanLetter = letter.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
         print(cleanLetter)
         if cleanLetter in self._clean_word:
-            self._letters = self._letters.replace(cleanLetter, '#')
+            self._letters = self._letters.replace(cleanLetter, '-')
             self._modifyWord(cleanLetter)
             return True
         else:
-            self._letters = self._letters.replace(cleanLetter, '#')
+            self._letters = self._letters.replace(cleanLetter, '-')
             self._modifyWord(cleanLetter)
             return False
 
@@ -44,7 +44,7 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
         return self._letters
 
     def printLetters(self) -> None:
-        retString = ", ".join(self._letters).upper()
+        retString = " ".join(self._letters).upper()
 
         print("Letras Disponíveis: " + retString)
 
