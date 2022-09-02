@@ -1,4 +1,6 @@
-"""Classe que implementa a lógica de verificação de palavras e letras para o jogo da forca.
+import string
+class Checker:
+    '''Classe que implementa a lógica de verificação de palavras e letras para o jogo da forca.
 
 Métodos Publicos Disponíveis
 
@@ -7,10 +9,8 @@ getSuccessfullWord -- Retorna uma string contendo a palavra aleatória com as le
 check -- Retorna True caso a letra inserida esteja contida na palavra checker (a letra inserida pode conter acentos e letras maísculas.)
 getLetters -- Retorna uma string com as letras do alfabeto, com as letras já utilizadas representadas por "#"
 printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letras em si (getLetters)
-"""
+'''
 
-import string
-class Checker:
     def __init__(self, word):
         self._word = word
         self._successfullWord = ["_" for _ in range(len(self._word))]
@@ -30,11 +30,14 @@ class Checker:
 
     def check(self, letter) -> bool:
         cleanLetter = letter.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
+        print(cleanLetter)
         if cleanLetter in self._clean_word:
             self._letters = self._letters.replace(cleanLetter, '#')
             self._modifyWord(cleanLetter)
             return True
         else:
+            self._letters = self._letters.replace(cleanLetter, '#')
+            self._modifyWord(cleanLetter)
             return False
 
     def getLetters(self) -> str:
@@ -47,26 +50,34 @@ class Checker:
 
 if __name__ == "__main__":
     checker = Checker("amigo")
-    print(checker.getSuccessfullWord())
     checker.check("a")
-    checker.printLetters()
     print(checker.getSuccessfullWord())
-    checker.check("á")
     checker.printLetters()
-    print(checker.getSuccessfullWord())
-    checker.check("ú")
     checker.check("m")
-    checker.printLetters()
     print(checker.getSuccessfullWord())
+    checker.printLetters()
     checker.check("i")
-    checker.printLetters()
     print(checker.getSuccessfullWord())
+    checker.printLetters()
     checker.check("g")
-    checker.printLetters()
     print(checker.getSuccessfullWord())
+    checker.printLetters()
+    checker.check("g")
+    print(checker.getSuccessfullWord())
+    checker.printLetters()
+    checker.check("u")
+    print(checker.getSuccessfullWord())
+    checker.printLetters()
+    checker.check("í")
+    print(checker.getSuccessfullWord())
+    checker.printLetters()
+    checker.check("g")
+    print(checker.getSuccessfullWord())
+    checker.printLetters()
     checker.check("o")
-    checker.printLetters()
     print(checker.getSuccessfullWord())
+    checker.printLetters()
+
 
 
     
