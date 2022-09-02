@@ -1,5 +1,6 @@
-from desenhos import estagios_desenho_forca as lista_desenho
+import string
 from Checker import Checker
+from desenhos import estagios_desenho_forca as lista_desenho
 
 class Game():
     def __init__(self, palavra, estagios_desenho):
@@ -12,7 +13,7 @@ class Game():
         self.vitoria = False
         self.finalizou = False
         self.letras_entradas = []
-        self.letras_alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+        self.letras_alfabeto = string.ascii_uppercase
     
     def atualizar_interface(self):
         print(self.desenho_estagios[self.erros])
