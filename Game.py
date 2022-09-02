@@ -24,13 +24,6 @@ class Game():
                 else:
                     print("\nVocê perdeu.")
                     break
-    
-    def atualizar_interface(self):
-        print("\nRodada atual: {}".format(self.rodada_atual))
-        print(self.desenho_estagios[self.erros])
-        print(f"Número de erros permitidos: {self.limite_erros - self.erros - 1}")
-        print(self.palavra.getSuccessfullWord())
-        self.palavra.printLetters()
 
     def rodada(self):
         self.atualizar_interface()
@@ -47,18 +40,25 @@ class Game():
             self.erros += 1
 
         self.rodada_atual += 1
+    
+    def atualizar_interface(self):
+        print("\nRodada atual: {}".format(self.rodada_atual))
+        print(self.desenho_estagios[self.erros])
+        print(f"Número de erros permitidos: {self.limite_erros - self.erros - 1}")
+        print(self.palavra.getSuccessfullWord())
+        self.palavra.printLetters()
 
     def fim_de_jogo(self):
         return self.jogo_ganho() or self.erros == self.limite_erros
-
-    def reinicar_jogo(self, palavra):
-        self.__init__(palavra)
 
     def jogo_ganho(self):
         if '_' not in self.palavra.getSuccessfullWord():
             return True
         else:
             return False
+    
+    def reinicar_jogo(self, palavra):
+        self.__init__(palavra)
 
 
 if __name__ == "__main__":
