@@ -16,5 +16,5 @@ class Word():
         else : return ""
 
 if __name__ == '__main__':
-    w = Words()
+    w = Word()
     print(w.get_random_word())

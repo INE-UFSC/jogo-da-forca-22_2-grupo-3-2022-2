@@ -3,7 +3,7 @@ from desenhos import estagios_desenho_forca as lista_desenho
 
 
 class Game():
-    def __init__(self, palavra, estagios_desenho):
+    def __init__(self, palavra, estagios_desenho = lista_desenho):
         self.palavra = Checker(palavra)
 
         self.rodada_atual = 0
@@ -22,6 +22,7 @@ class Game():
                     break
                 else:
                     print("\nVocê perdeu.")
+                    print("Palavra correta: {}".format(self.palavra.getWord().upper()))
                     break
 
     def rodada(self):
@@ -55,11 +56,8 @@ class Game():
             return True
         else:
             return False
-    
-    def reinicar_jogo(self, palavra):
-        self.__init__(palavra)
 
 
 if __name__ == "__main__":
-    jogo1 = Game("elefante", lista_desenho)
+    jogo1 = Game("elefante")
     jogo1.run()
