@@ -27,8 +27,6 @@ class Game():
         while self.palavra.check(letra_escolhida) == False:
             letra_escolhida = str(input("Letra inválida, escolha novamente: ")).lower()
 
-        
-
         self.tentativas += 1
 
 
