@@ -5,7 +5,7 @@ class Words():
     def __init__(self):
         pass
 
-    def get_random_word(self):
+    def get_random_word(self) -> str:
         
         #utilizar uma api para coletar uma palavra
         r = requests.get('https://api.dicionario-aberto.net/random')

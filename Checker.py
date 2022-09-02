@@ -6,11 +6,12 @@ class Checker:
     def __init__(self, word):
         self._word = word
         self._clean_word = word.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
-        self._letters = list(string.ascii_lowercase) + 'áéíóúç'
+        self._letters = string.ascii_lowercase
 
     def check(self, letter):
-        if letter in self._word:
-            self._letters.replace(letter, '#')
+        cleanLetter = letter.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
+        if cleanLetter in self._clean_word:
+            self._letters.replace(cleanLetter, '#')
             return True
         else:
             return False
@@ -23,5 +24,15 @@ class Checker:
         print("Letras Disponíveis: " + retString)
 
 if __name__ == "__main__":
-    pass
+    checker = Checker("amigo")
+    print(checker.check("a"))
+    checker.printLetters()
+    print(checker.check("á"))
+    checker.printLetters()
+    print(checker.check("b"))
+    checker.printLetters()
+
+    
+
+
     
