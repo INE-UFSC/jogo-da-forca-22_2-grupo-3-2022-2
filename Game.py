@@ -9,23 +9,30 @@ class Game():
 
         self.tentativas = 0
         self.erros = 0
-        self.limite_erros = len(estagios_desenho)
+        self.limite_erros = len(estagios_desenho) - 1
         self.desenho_estagios = estagios_desenho  # É possível utlizar diferentes desenhos de console no jogo. Para isso deve-se alterar o import
-        self.vitoria = False
-        self.finalizou = False
         self.letras_entradas = []  # esta informação está contida na classe Checker pelo método printLetters()
         # o qual printa as letras disponíveis com as letras que foram utilizadas já marcadas
 
     def run(self):
         running = True
         while running:  # gameloop
-            pass
+            self.rodada()
+            if self.fim_de_jogo():
+                if self.jogo_ganho():
+                    print("\nParabéns você ganhou!")
+                    break
+                else:
+                    print("\nVocê perdeu.")
+                    break
     
     def atualizar_interface(self):
         print("\nRodada atual: {}".format(self.tentativas))
         print(self.desenho_estagios[self.erros])
+        print(f"Número de erros permitidos: {self.limite_erros - self.erros - 1}")
         print(self.palavra.getSuccessfullWord())
         self.palavra.printLetters()
+
     
     def rodada(self):
         self.atualizar_interface()
@@ -37,6 +44,16 @@ class Game():
 
         self.tentativas += 1
 
+    def fim_de_jogo(self):
+        return self.jogo_ganho() or self.erros == self.limite_erros
+
+    def jogo_ganho(self):
+        if '_' not in self.palavra.getSuccessfullWord():
+            return True
+        else:
+            return False
 
 
-jogo1 = Game("elefante", lista_desenho)
+if __name__ == "__main__":
+    jogo1 = Game("elefante", lista_desenho)
+    jogo1.run()
