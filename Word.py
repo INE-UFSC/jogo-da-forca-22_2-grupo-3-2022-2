@@ -1,7 +1,7 @@
 import requests
 import json
 
-class Words():
+class Word():
     '''A classe Words implementa o método getRandomWord, que retorna uma string com uma palavra aleatória retirada da api dicionario-aberto.net'''
     def __init__(self) -> None:
         pass
