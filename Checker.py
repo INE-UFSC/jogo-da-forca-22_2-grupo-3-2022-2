@@ -23,7 +23,7 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
     def _modifyWord(self, letter):
         for i in range(len(self._word)):
             if self._word[i] == letter:
-                self._successfullWord[i] = letter
+                self._successfullWord[i] = letter.upper()
 
     def getSuccessfullWord(self) -> str:
         return "".join(self._successfullWord)
@@ -31,14 +31,14 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
     def check(self, letter) -> bool:
         cleanLetter = letter.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
         print(cleanLetter)
-        if cleanLetter in self._clean_word:
-            self._letters = self._letters.replace(cleanLetter, '-')
-            self._modifyWord(cleanLetter)
-            return True
-        else:
+        if cleanLetter not in self._clean_word: # Se a letra não estiver na palavra
             self._letters = self._letters.replace(cleanLetter, '-')
             self._modifyWord(cleanLetter)
             return False
+        else: # Se a letra estiver na palavra e já não estiver sido inserida
+            self._letters = self._letters.replace(cleanLetter, '-')
+            self._modifyWord(cleanLetter)
+            return True
 
     def getLetters(self) -> str:
         return self._letters

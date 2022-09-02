@@ -11,8 +11,7 @@ class Game():
         self.erros = 0
         self.limite_erros = len(estagios_desenho) - 1
         self.desenho_estagios = estagios_desenho  # É possível utlizar diferentes desenhos de console no jogo. Para isso deve-se alterar o import
-        self.letras_entradas = []  # esta informação está contida na classe Checker pelo método printLetters()
-        # o qual printa as letras disponíveis com as letras que foram utilizadas já marcadas
+        self.letras_entradas = []  # Lista das letras inseridas pelo usuário, usada para impedir que seja possível inserir letras já escolhidas
 
     def run(self):
         running = True
@@ -35,9 +34,15 @@ class Game():
 
     def rodada(self):
         self.atualizar_interface()
-        letra_escolhida = str(input("Escolha uma letra: ")).lower()
-        while letra_escolhida.isalpha() == False or len(letra_escolhida) != 1:
-            letra_escolhida = str(input("Letra inválida, digite novamente: ")).lower()
+
+        letra_escolhida = str(input("Escolha uma letra: ")).upper()
+        # Restrições de entrada
+        while (letra_escolhida.isalpha() == False) or (len(letra_escolhida) != 1) or (letra_escolhida in self.letras_entradas):
+            letra_escolhida = str(input("Letra inválida, digite novamente: ")).upper()
+        
+        # Se a letra escolhida foi aceita, será colocada na lista de letras já escolhidas
+        self.letras_entradas.append(letra_escolhida)
+        
         if self.palavra.check(letra_escolhida) == False:
             self.erros += 1
 
