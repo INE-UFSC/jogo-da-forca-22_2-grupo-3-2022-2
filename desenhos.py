@@ -1,96 +1,110 @@
-if erros == 0:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |           ")
-    print(" |           ")
-    print(" |           ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 1:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |           ")
-    print(" |           ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 2:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |     |     ")
-    print(" |           ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 3:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|     ")
-    print(" |           ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 4:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |           ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 5:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |     |     ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 6:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ |     ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 7:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ | ^   ")
-    print(" |           ")
-    print("_|_          ")
-elif erros == 8:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ | ^   ")
-    print(" |    /      ")
-    print("_|_          ")
-elif erros == 9:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ | ^   ")
-    print(" |    / \    ")
-    print("_|_          ")
-elif erros == 10:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ | ^   ")
-    print(" |    / \_   ")
-    print("_|_          ")
-elif erros == 11:
-    print(" +=====+     ")
-    print(" |     |     ")
-    print(" |    (_)    ")
-    print(" |    /|\    ")
-    print(" |   ^ | ^   ")
-    print(" |   _/ \_   ")
-    print("_|_          ")
+estagios_desenho_forca = [
+"""
+ +=====+     
+ |     |     
+ |           
+ |           
+ |           
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |           
+ |           
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |     |     
+ |           
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|     
+ |           
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |           
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |     |     
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ |     
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ | ^   
+ |           
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ | ^   
+ |    /      
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ | ^   
+ |    / \    
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ | ^   
+ |    / \_   
+_|_          
+""",
+"""
+ +=====+     
+ |     |     
+ |    (_)    
+ |    /|\    
+ |   ^ | ^   
+ |   _/ \_   
+_|_          
+"""
+]
