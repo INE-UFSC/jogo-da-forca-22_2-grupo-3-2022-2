@@ -20,8 +20,8 @@ class Checker:
         return self._letters
 
     def printLetters(self):
-        retString = "".join(self._letters, ', ')
-        print("Letras Disponíveis: " + retString)
+        #retString = "".join(self._letters, ', ')
+        print("Letras Disponíveis: " + self._letters)
 
 if __name__ == "__main__":
     checker = Checker("amigo")
