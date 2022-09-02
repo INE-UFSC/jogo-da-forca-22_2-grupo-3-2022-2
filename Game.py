@@ -33,12 +33,11 @@ class Game():
         print(self.palavra.getSuccessfullWord())
         self.palavra.printLetters()
 
-    
     def rodada(self):
         self.atualizar_interface()
         letra_escolhida = str(input("Escolha uma letra: ")).lower()
-        while letra_escolhida.isalpha() == False:
-            letra_escolhida = str(input("Letra inválida: ")).lower()
+        while letra_escolhida.isalpha() == False or len(letra_escolhida) != 1:
+            letra_escolhida = str(input("Letra inválida, digite novamente: ")).lower()
         if self.palavra.check(letra_escolhida) == False:
             self.erros += 1
 
