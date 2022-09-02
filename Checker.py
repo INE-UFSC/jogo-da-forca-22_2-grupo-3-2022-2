@@ -30,7 +30,6 @@ printLetters -- Printa no console as "Letras Disponíveis: " seguido pelas letra
 
     def check(self, letter) -> bool:
         cleanLetter = letter.lower().replace('á', 'a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
-        print(cleanLetter)
         if cleanLetter not in self._clean_word: # Se a letra não estiver na palavra
             self._letters = self._letters.replace(cleanLetter, '-')
             self._modifyWord(cleanLetter)
