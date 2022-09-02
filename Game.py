@@ -8,7 +8,7 @@ class Game():
 
         self.rodada_atual = 0
         self.erros = 0
-        self.limite_erros = len(estagios_desenho) - 1
+        self.limite_erros = len(estagios_desenho)
         self.desenho_estagios = estagios_desenho  # É possível utlizar diferentes desenhos de console no jogo. Para isso deve-se alterar o import
         self.letras_entradas = []  # Lista das letras inseridas pelo usuário, usada para impedir que seja possível inserir letras já escolhidas
 
