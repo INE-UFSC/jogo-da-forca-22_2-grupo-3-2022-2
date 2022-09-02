@@ -1,4 +1,3 @@
-from sqlite3 import enable_callback_tracebacks
 import string
 from Checker import Checker
 from desenhos import estagios_desenho_forca as lista_desenho
